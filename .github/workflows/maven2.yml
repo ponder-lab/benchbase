@@ -215,7 +215,7 @@ jobs:
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4
         with:
-          name: benchmark-results-${{ matrix.benchmark }}
+          name: benchmark-results-postgressql-${{ matrix.benchmark }}
           path: |
             results/histograms.json
             ${{ steps.get_result_files.outputs.config_file }}
@@ -313,7 +313,7 @@ jobs:
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4
         with:
-          name: benchmark-results-${{ matrix.benchmark }}
+          name: benchmark-results-cockroachdb-${{ matrix.benchmark }}
           path: |
             results/histograms.json
             ${{ steps.get_result_files.outputs.config_file }}
@@ -443,7 +443,7 @@ jobs:
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4
         with:
-          name: benchmark-results-${{ matrix.benchmark }}
+          name: benchmark-results-mssql-${{ matrix.benchmark }}
           path: |
             results/histograms.json
             ${{ steps.get_result_files.outputs.config_file }}
