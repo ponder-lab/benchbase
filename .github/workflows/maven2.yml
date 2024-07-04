@@ -204,9 +204,7 @@ jobs:
         with:
           name: benchmark-results-postgressql-${{ matrix.benchmark }}
           path: |
-            results/histograms.json
             results/${{ matrix.benchmark }}*.csv
-            results/monitor/
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
@@ -287,9 +285,7 @@ jobs:
         with:
           name: benchmark-results-cockroachdb-${{ matrix.benchmark }}
           path: |
-            results/histograms.json
             results/${{ matrix.benchmark }}*.csv
-            results/monitor/
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
@@ -402,9 +398,7 @@ jobs:
         with:
           name: benchmark-results-mssql-${{ matrix.benchmark }}
           path: |
-            results/histograms.json
             results/${{ matrix.benchmark }}*.csv
-            results/monitor/
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
