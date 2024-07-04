@@ -218,7 +218,6 @@ jobs:
           name: benchmark-results-postgressql-${{ matrix.benchmark }}
           path: |
             results/histograms.json
-            ${{ steps.get_result_files.outputs.config_file }}
             ${{ steps.get_result_files.outputs.summary_json }}
             results/${{ matrix.benchmark }}*.csv
             results/monitor/
@@ -316,7 +315,6 @@ jobs:
           name: benchmark-results-cockroachdb-${{ matrix.benchmark }}
           path: |
             results/histograms.json
-            ${{ steps.get_result_files.outputs.config_file }}
             ${{ steps.get_result_files.outputs.summary_json }}
             results/${{ matrix.benchmark }}*.csv
             results/monitor/
@@ -446,7 +444,6 @@ jobs:
           name: benchmark-results-mssql-${{ matrix.benchmark }}
           path: |
             results/histograms.json
-            ${{ steps.get_result_files.outputs.config_file }}
             ${{ steps.get_result_files.outputs.summary_json }}
             results/${{ matrix.benchmark }}*.csv
             results/monitor/
