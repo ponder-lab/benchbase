@@ -203,7 +203,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-results-postgressql-${{ matrix.benchmark }}
-          path: $results_benchmark
+          path: results/${{matrix.benchmark}}
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
@@ -283,7 +283,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-results-cockroachdb-${{ matrix.benchmark }}
-          path: $results_benchmark
+          path: results/${{matrix.benchmark}}
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
@@ -395,7 +395,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-results-mssql-${{ matrix.benchmark }}
-          path: $results_benchmark
+          path: results/${{matrix.benchmark}}
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
