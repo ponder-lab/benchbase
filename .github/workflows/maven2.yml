@@ -199,26 +199,12 @@ jobs:
         run: |
           ./docker/postgres-latest/down.sh
 
-      - name: Get result file paths
-        id: get_result_files
-        run: |
-          config_file=$(ls -1t results/${{ matrix.benchmark }}_*.config.xml | head -n1)
-          if [ -z "$config_file" ]; then
-            echo "ERROR: Failed to find ${{ matrix.benchmark }} benchmark results files." >&2
-            exit 1
-          fi
-          ts=$(basename "$config_file" | sed -e "s/^${{ matrix.benchmark }}_//" -e 's/\.config\.xml//')
-          summary_json="results/${{ matrix.benchmark }}_${ts}.summary.json"
-          echo "config_file=$config_file" >> $GITHUB_OUTPUT
-          echo "summary_json=$summary_json" >> $GITHUB_OUTPUT
-
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-results-postgressql-${{ matrix.benchmark }}
           path: |
             results/histograms.json
-            ${{ steps.get_result_files.outputs.summary_json }}
             results/${{ matrix.benchmark }}*.csv
             results/monitor/
           if-no-files-found: error
@@ -296,26 +282,12 @@ jobs:
           ./scripts/check_latest_benchmark_results.sh $results_benchmark
           ./scripts/check_histogram_results.sh results/histograms.json $ERRORS_THRESHOLD
 
-      - name: Get result file paths
-        id: get_result_files
-        run: |
-          config_file=$(ls -1t results/${{ matrix.benchmark }}_*.config.xml | head -n1)
-          if [ -z "$config_file" ]; then
-            echo "ERROR: Failed to find ${{ matrix.benchmark }} benchmark results files." >&2
-            exit 1
-          fi
-          ts=$(basename "$config_file" | sed -e "s/^${{ matrix.benchmark }}_//" -e 's/\.config\.xml//')
-          summary_json="results/${{ matrix.benchmark }}_${ts}.summary.json"
-          echo "config_file=$config_file" >> $GITHUB_OUTPUT
-          echo "summary_json=$summary_json" >> $GITHUB_OUTPUT
-
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-results-cockroachdb-${{ matrix.benchmark }}
           path: |
             results/histograms.json
-            ${{ steps.get_result_files.outputs.summary_json }}
             results/${{ matrix.benchmark }}*.csv
             results/monitor/
           if-no-files-found: error
@@ -424,19 +396,6 @@ jobs:
             echo "ERROR: Advanced monitoring unsuccessful, file directory and/or appropriate files not created." >&2
             exit 1
           fi
-          
-      - name: Get result file paths
-        id: get_result_files
-        run: |
-          config_file=$(ls -1t results/${{ matrix.benchmark }}_*.config.xml | head -n1)
-          if [ -z "$config_file" ]; then
-            echo "ERROR: Failed to find ${{ matrix.benchmark }} benchmark results files." >&2
-            exit 1
-          fi
-          ts=$(basename "$config_file" | sed -e "s/^${{ matrix.benchmark }}_//" -e 's/\.config\.xml//')
-          summary_json="results/${{ matrix.benchmark }}_${ts}.summary.json"
-          echo "config_file=$config_file" >> $GITHUB_OUTPUT
-          echo "summary_json=$summary_json" >> $GITHUB_OUTPUT
 
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4
@@ -444,7 +403,6 @@ jobs:
           name: benchmark-results-mssql-${{ matrix.benchmark }}
           path: |
             results/histograms.json
-            ${{ steps.get_result_files.outputs.summary_json }}
             results/${{ matrix.benchmark }}*.csv
             results/monitor/
           if-no-files-found: error
