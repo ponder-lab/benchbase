@@ -190,7 +190,7 @@ jobs:
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4
         with:
-          name: benchmark-results-${{ matrix.benchmark }}
+          name: benchmark-results-sqlite-${{ matrix.benchmark }}
           path: |
             results/histograms.json
             ${{ steps.get_result_files.outputs.config_file }}
@@ -298,7 +298,7 @@ jobs:
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4
         with:
-          name: benchmark-results-${{ matrix.benchmark }}
+          name: benchmark-results-mariadb-${{ matrix.benchmark }}
           path: |
             results/histograms.json
             ${{ steps.get_result_files.outputs.config_file }}
@@ -426,7 +426,7 @@ jobs:
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4
         with:
-          name: benchmark-results-${{ matrix.benchmark }}
+          name: benchmark-results-mysql-${{ matrix.benchmark }}
           path: |
             results/histograms.json
             ${{ steps.get_result_files.outputs.config_file }}
@@ -542,7 +542,7 @@ jobs:
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4
         with:
-          name: benchmark-results-${{ matrix.benchmark }}
+          name: benchmark-results-oracle-${{ matrix.benchmark }}
           path: |
             results/histograms.json
             ${{ steps.get_result_files.outputs.config_file }}
