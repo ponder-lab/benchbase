@@ -67,7 +67,7 @@ public class ThreadBench implements Thread.UncaughtExceptionHandler {
 
     for (Worker<?> worker : workers) {
       worker.initializeState();
-      Thread thread = new Thread(worker);
+      Thread thread = Thread.ofVirtual().unstarted(worker);
       thread.setUncaughtExceptionHandler(this);
       thread.start();
       this.workerThreads.add(thread);
