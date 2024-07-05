@@ -180,6 +180,9 @@ jobs:
           name: benchmark-results-sqlite-${{ matrix.benchmark }}
           path: |
             results/${{ matrix.benchmark }}*.csv
+            results/${{ matrix.benchmark }}*.json
+            results/histograms.json
+            results/monitor
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
@@ -271,6 +274,9 @@ jobs:
           name: benchmark-results-mariadb-${{ matrix.benchmark }}
           path: |
             results/${{ matrix.benchmark }}*.csv
+            results/${{ matrix.benchmark }}*.json
+            results/histograms.json
+            results/monitor
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
@@ -382,6 +388,9 @@ jobs:
           name: benchmark-results-mysql-${{ matrix.benchmark }}
           path: |
             results/${{ matrix.benchmark }}*.csv
+            results/${{ matrix.benchmark }}*.json
+            results/histograms.json
+            results/monitor
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
@@ -481,6 +490,9 @@ jobs:
           name: benchmark-results-oracle-${{ matrix.benchmark }}
           path: |
             results/${{ matrix.benchmark }}*.csv
+            results/${{ matrix.benchmark }}*.json
+            results/histograms.json
+            results/monitor
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
