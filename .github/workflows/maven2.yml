@@ -19,7 +19,7 @@ on:
     tags:
       - 'v*'
   pull_request:
-    branches: [ main ]
+    branches: [ main, upload_results ]
   # Run these workflows on a schedule so that docker images are regularly updated for security patches.
   schedule:
     - cron: "1 0 * * *"
