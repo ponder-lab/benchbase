@@ -19,7 +19,7 @@ on:
     tags:
       - 'v*'
   pull_request:
-    branches: [ main ]
+    branches: [ main, upload_results ]
   # Run these workflows on a schedule so that docker images are regularly updated for security patches.
   schedule:
     - cron: "1 0 * * *"
@@ -203,7 +203,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-results-postgressql-${{ matrix.benchmark }}
-          path: $results_benchmark
+          path: |
+            results/${{ matrix.benchmark }}*.csv
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
@@ -283,7 +284,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-results-cockroachdb-${{ matrix.benchmark }}
-          path: $results_benchmark
+          path: |
+            results/${{ matrix.benchmark }}*.csv
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
@@ -390,12 +392,13 @@ jobs:
             echo "ERROR: Advanced monitoring unsuccessful, file directory and/or appropriate files not created." >&2
             exit 1
           fi
-          
+
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-results-mssql-${{ matrix.benchmark }}
-          path: $results_benchmark
+          path: |
+            results/${{ matrix.benchmark }}*.csv
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------

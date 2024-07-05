@@ -19,7 +19,7 @@ on:
     tags:
       - 'v*'
   pull_request:
-    branches: [ main ]
+    branches: [ main, upload_results ]
   # Run these workflows on a schedule so that docker images are regularly updated for security patches.
   schedule:
     - cron: "1 0 * * *"
@@ -173,12 +173,13 @@ jobs:
           fi
           ./scripts/check_latest_benchmark_results.sh $results_benchmark
           ./scripts/check_histogram_results.sh results/histograms.json $ERRORS_THRESHOLD
-          
+
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-results-sqlite-${{ matrix.benchmark }}
-          path: $results_benchmark
+          path: |
+            results/${{ matrix.benchmark }}*.csv
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
@@ -263,12 +264,13 @@ jobs:
           fi
           ./scripts/check_latest_benchmark_results.sh $results_benchmark
           ./scripts/check_histogram_results.sh results/histograms.json $ERRORS_THRESHOLD
-          
+
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-results-mariadb-${{ matrix.benchmark }}
-          path: $results_benchmark
+          path: |
+            results/${{ matrix.benchmark }}*.csv
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
@@ -378,7 +380,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-results-mysql-${{ matrix.benchmark }}
-          path: $results_benchmark
+          path: |
+            results/${{ matrix.benchmark }}*.csv
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
@@ -476,7 +479,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-results-oracle-${{ matrix.benchmark }}
-          path: $results_benchmark
+          path: |
+            results/${{ matrix.benchmark }}*.csv
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
