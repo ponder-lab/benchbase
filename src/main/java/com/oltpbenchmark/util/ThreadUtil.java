@@ -84,7 +84,7 @@ public abstract class ThreadUtil {
           threadOverflow);
     }
 
-    ExecutorService service = Executors.newVirtualThreadPerTaskExecutor();
+    ExecutorService service = Executors.newFixedThreadPool(poolSize, factory);
 
     final long start = System.currentTimeMillis();
 
@@ -126,6 +126,16 @@ public abstract class ThreadUtil {
       }
     }
   }
+
+  private static final ThreadFactory factory =
+      new ThreadFactory() {
+        @Override
+        public Thread newThread(Runnable r) {
+          Thread t = new Thread(r);
+          t.setDaemon(true);
+          return (t);
+        }
+      };
 
   private static class LatchRunnable implements Runnable {
     private final LoaderThread loaderThread;
