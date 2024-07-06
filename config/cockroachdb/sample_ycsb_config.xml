@@ -21,7 +21,7 @@
     <!-- <skewFactor>0.99</skewFactor> -->
 
     <!-- The workload -->
-    <terminals>1</terminals>
+    <terminals>16</terminals>
     <works>
         <work>
             <time>300</time>
