@@ -267,7 +267,7 @@ jobs:
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4
         with:
-          name: benchmark-results-sqlite-${{ matrix.benchmark }}
+          name: benchmark-results-mariadb-${{ matrix.benchmark }}
           path: results/${{ matrix.benchmark }}*.summary.json
           if-no-files-found: error
 
@@ -377,7 +377,7 @@ jobs:
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4
         with:
-          name: benchmark-results-sqlite-${{ matrix.benchmark }}
+          name: benchmark-results-mysql-${{ matrix.benchmark }}
           path: results/${{ matrix.benchmark }}*.summary.json
           if-no-files-found: error
 
@@ -475,7 +475,7 @@ jobs:
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4
         with:
-          name: benchmark-results-sqlite-${{ matrix.benchmark }}
+          name: benchmark-results-oracle-${{ matrix.benchmark }}
           path: results/${{ matrix.benchmark }}*.summary.json
           if-no-files-found: error
 
@@ -575,7 +575,7 @@ jobs:
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4
         with:
-          name: benchmark-results-sqlite-${{ matrix.benchmark }}
+          name: benchmark-results-postgresql-${{ matrix.benchmark }}
           path: results/${{ matrix.benchmark }}*.summary.json
           if-no-files-found: error
 
@@ -655,7 +655,7 @@ jobs:
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4
         with:
-          name: benchmark-results-sqlite-${{ matrix.benchmark }}
+          name: benchmark-results-cockroachdb-${{ matrix.benchmark }}
           path: results/${{ matrix.benchmark }}*.summary.json
           if-no-files-found: error
 
@@ -767,7 +767,7 @@ jobs:
       - name: Upload benchmark results
         uses: actions/upload-artifact@v4
         with:
-          name: benchmark-results-sqlite-${{ matrix.benchmark }}
+          name: benchmark-results-mssql-${{ matrix.benchmark }}
           path: results/${{ matrix.benchmark }}*.summary.json
           if-no-files-found: error
 
