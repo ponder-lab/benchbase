@@ -20,7 +20,7 @@
     <base_ip>10.1.</base_ip>
 
     <!-- The workload -->
-    <terminals>1</terminals>
+    <terminals>16</terminals>
     <works>
         <work>
             <time>60</time>

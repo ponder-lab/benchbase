@@ -19,7 +19,7 @@
     <afterload>/benchmarks/gather_schema_stats_oracle.sql</afterload>
 
     <!-- The workload -->
-    <terminals>1</terminals>
+    <terminals>16</terminals>
     <works>
         <work>
             <serial>true</serial>
