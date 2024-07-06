@@ -178,7 +178,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-results-sqlite-${{ matrix.benchmark }}
-          path: results/${{ matrix.benchmark }}*-summary.json
+          path: results/${{ matrix.benchmark }}*.summary.json
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
@@ -268,7 +268,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-results-sqlite-${{ matrix.benchmark }}
-          path: results/${{ matrix.benchmark }}*-summary.json
+          path: results/${{ matrix.benchmark }}*.summary.json
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
@@ -378,7 +378,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-results-sqlite-${{ matrix.benchmark }}
-          path: results/${{ matrix.benchmark }}*-summary.json
+          path: results/${{ matrix.benchmark }}*.summary.json
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
@@ -476,7 +476,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-results-sqlite-${{ matrix.benchmark }}
-          path: results/${{ matrix.benchmark }}*-summary.json
+          path: results/${{ matrix.benchmark }}*.summary.json
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
@@ -576,7 +576,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-results-sqlite-${{ matrix.benchmark }}
-          path: results/${{ matrix.benchmark }}*-summary.json
+          path: results/${{ matrix.benchmark }}*.summary.json
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
@@ -656,7 +656,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-results-sqlite-${{ matrix.benchmark }}
-          path: results/${{ matrix.benchmark }}*-summary.json
+          path: results/${{ matrix.benchmark }}*.summary.json
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
@@ -768,7 +768,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: benchmark-results-sqlite-${{ matrix.benchmark }}
-          path: results/${{ matrix.benchmark }}*-summary.json
+          path: results/${{ matrix.benchmark }}*.summary.json
           if-no-files-found: error
 
   ## ----------------------------------------------------------------------------------
