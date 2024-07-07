@@ -16,7 +16,7 @@
 
     <!-- The workload -->
     <!-- Number of terminal per workload -->
-    <terminals>1</terminals>
+    <terminals>128</terminals>
 
     <!-- Extra Features (Commented Out) -->
     <!-- Can be workload-specific -->

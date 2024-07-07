@@ -15,7 +15,7 @@
     <scalefactor>0.1</scalefactor>
 
     <!-- The workload -->
-    <terminals>1</terminals>
+    <terminals>128</terminals>
     <works>
         <work>
             <serial>true</serial>

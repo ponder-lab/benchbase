@@ -16,7 +16,7 @@
 
     <!-- The workload -->
     <!-- Number of terminal per workload -->
-    <terminals>1</terminals>
+    <terminals>128</terminals>
 
     <!-- Gather schema stats after loading to improve performance -->
     <!-- See src/main/resources/benchmarks/gather_schema_stats_oracle.sql -->

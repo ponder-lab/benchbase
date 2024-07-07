@@ -64,7 +64,7 @@ public class ThreadBench implements Thread.UncaughtExceptionHandler {
   }
 
   private void createWorkerThreads() {
-
+    LOG.info("Number of worker threads: {}", workers.size());
     for (Worker<?> worker : workers) {
       worker.initializeState();
       Thread thread = new Thread(worker);
